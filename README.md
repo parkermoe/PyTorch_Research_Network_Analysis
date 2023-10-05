@@ -38,13 +38,21 @@ By analyzing the co-authorship network, we identified key figures within the PyT
 
 The co-authorship network displays several interesting properties commonly seen in real-world collaboration networks:
 
+![image](https://github.com/parkermoe/PyTorch_Research_Network_Analysis/assets/75709283/f1a9e2b5-acac-4512-96b0-5030526e8bfc)
+
 1. **Average Shortest Path Length**: The average number of collaborations it takes to connect any two authors in the network is approximately \(7.18\), suggesting a relatively close-knit community.
   
 2. **Power Law Degree Distribution**: The network's degree distribution follows a power-law pattern, typical of many real-world networks. While most authors collaborate with only a few others, a small subset acts as collaboration hubs. This distribution can be observed in the Degree Distribution figure below.
+
+![image](https://github.com/parkermoe/PyTorch_Research_Network_Analysis/assets/75709283/42e660cb-201e-41aa-91a0-7e63e819e5b8)
+
   
-3. **Network Diameter**: The longest shortest path between any two authors in the network spans 19 collaborations.
+4. **Network Diameter**: The longest shortest path between any two authors in the network spans 19 collaborations.
   
-4. **High Clustering Coefficient**: With an average clustering coefficient of approximately \(0.902\), the co-authorship network shows that authors tend to form tight-knit clusters or groups. This pattern suggests that collaborations are not random; instead, authors often collaborate in groups, leading to high interconnectedness within these groups. The structure of these clusters can be explored in the Network Visualization figure below.
+5. **High Clustering Coefficient**: With an average clustering coefficient of approximately \(0.902\), the co-authorship network shows that authors tend to form tight-knit clusters or groups. This pattern suggests that collaborations are not random; instead, authors often collaborate in groups, leading to high interconnectedness within these groups. The structure of these clusters can be explored in the Network Visualization figure below.
+
+
+
 
 
 ## Yearly Analysis of the Co-authorship Network
