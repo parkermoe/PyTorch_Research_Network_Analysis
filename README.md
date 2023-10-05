@@ -1,6 +1,6 @@
 ## Project Overview
 
-In the evolving landscape of deep learning and artificial intelligence, libraries and frameworks play a pivotal role. PyTorch, as one of the leading libraries in this domain, has seen exponential growth and adoption. This project aims to provide a network analysis of papers related to PyTorch from arXiv, offering insights into the growth of the community, leading figures, and the influence of foundational papers.
+In the rapidly evolving field of deep learning and artificial intelligence, libraries such as PyTorch have become foundational elements of the research landscape. This project takes a multi-dimensional approach to analyze the growth and influence of PyTorch in the scientific community. Initially centered on co-authorship networks, the project has now expanded to include multi-level citation analysis, offering a holistic view of how PyTorch has influenced and propagated throughout the research world.
 
 ---
 
@@ -8,16 +8,19 @@ In the evolving landscape of deep learning and artificial intelligence, librarie
 
 1. **Data Extraction**: Collect papers pertaining to "PyTorch" from arXiv.
 2. **Network Analysis**: Analyze the co-authorship network to identify key figures and trends in the community.
-3. **Deep Dive**: Explore how the original PyTorch paper has influenced the research community by examining citations and their impact.
+3. **Co-Authorship Network Analysis**: Explore the community around PyTorch research by analyzing the co-authorship network.
+4. **Deep Dive**: Explore how the original PyTorch paper has influenced the research community by examining citations and their impact.
+5.  **Citation Network Analysis**: Investigate the influence and propagation of PyTorch papers by constructing and analyzing a multi-level citation network.
 
 ---
 
 ## Methodology
 
-1. **Data Collection**: Leveraged the arXiv API to fetch papers related to PyTorch.
-2. **Data Storage**: Stored the fetched data in a CSV format for easy access and manipulation.
-3. **Network Construction**: Using the `networkx` library, a co-authorship network was constructed. This network represents collaborations between authors, where nodes represent authors and edges represent collaborations.
+1. **Data Collection**: Utilized the arXiv API and the Semantic Scholar API to collect papers and their citations.
+2. **Data Storage**: Stored the fetched data in JSON and CSV formats for manipulation and analysis.
+3. **Network Construction**: Using the `networkx` library, a co-authorship network was constructed. This network represents collaborations between authors, where nodes represent authors and edges represent collaborations. This was ultimately  extended to multi-level citation networks.
 4. **Network Metrics**: Calculated various network metrics such as Degree Centrality and Betweenness Centrality to identify leading figures in the PyTorch community.
+5. **Interactive Visualization**: Leveraged Plotly and Pyvis to create interactive visualizations of the networks.
 
 ---
 
@@ -70,10 +73,48 @@ These insights not only spotlight the growth of the PyTorch community but also u
 
 By analyzing these network properties and visualizations, we can gain a deeper understanding of the collaborative dynamics of the PyTorch research community on arXiv. It's clear that while the community is vast, it remains interconnected through key figures and tight-knit collaboration clusters.
 
+## Multi-Level Citation Network Analysis
+
+In addition to co-authorship networks, this project also provides a multi-level citation network analysis centered around the original PyTorch paper. This analysis offers a deeper understanding of the paper's influence in the research community.
+
+### Visualization
+
+The visualization displays a three-level citation network:
+
+- **Red Node**: Represents the original PyTorch paper.
+- **Blue Nodes**: Papers that have cited the original PyTorch paper.
+- **Green Nodes**: Papers that are cited by the blue node papers.
+
+This enables us to see not just the direct impact of the original PyTorch paper, but also its secondary influence on subsequent research.
+
+![PyTorch Citation Network](https://github.com/parkermoe/PyTorch_Research_Network_Analysis/blob/main/pytorch_citation_output_fast.gif)
+
+### Applications and Insights
+
+This kind of multi-level citation network can provide invaluable insights for various stakeholders:
+
+1. **Influence Propagation**: The original PyTorch paper has been cited by a diverse set of research areas, indicating its wide-ranging impact.
+2. **Key Influencers**: Identified papers that have been most influential in propagating the citations of the original PyTorch paper.
+3. **Citation Dynamics**: Observed how citation patterns evolve over time, providing insights into emerging areas influenced by PyTorch.
+
+#### For Researchers:
+- Identify pivotal papers and trends in the PyTorch ecosystem.
+- Understand the secondary influence of the original PyTorch paper on different fields of study.
+
+#### For Companies Selling Complementary Tools:
+- Companies selling tools or services that complement PyTorch can use this analysis to identify key papers and authors who are deeply involved in PyTorch-related research.
+- By engaging these authors, either through collaboration or by offering specialized tools that could aid their research, companies have an opportunity to gain visibility and credibility within the research community, thereby increasing demand for their products.
+
+By offering a multi-dimensional view that goes beyond simple citation counts, this analysis provides a nuanced understanding of influence and impact in the research landscape surrounding PyTorch.
+
+1. **Influence Propagation**: The original PyTorch paper has been cited by a diverse set of research areas, indicating its wide-ranging impact.
+2. **Key Influencers**: Identified papers that have been most influential in propagating the citations of the original PyTorch paper.
+3. **Citation Dynamics**: Observed how citation patterns evolve over time, providing insights into emerging areas influenced by PyTorch.
+
 ## Future Work
 
-- Delve deeper into the influence of the original PyTorch paper by exploring its citations.
-- Analyze the growth of the PyTorch community over time by examining publication dates and new authors entering the community.
-- Explore topic trends by analyzing the categories and abstracts of the papers.
+- Further analysis of topic trends by examining the categories and abstracts of the papers.
+- Incorporate more sophisticated network metrics to understand the complex relationships in both co-authorship and citation networks.
+- Extend the multi-level citation analysis to explore the influence of other foundational papers in the deep learning landscape.
 
 
