@@ -1,5 +1,7 @@
 import requests
 from tqdm import tqdm
+import json
+import networkx as nx
 
 headers = {
     "User-Agent": "...",
@@ -50,3 +52,62 @@ class DeepCitationNetwork:
                     self.papers[paper_id]['citations'] = citations
                     next_to_process.extend([citation["citingPaper"]["paperId"] for citation in citations])
             to_process = next_to_process
+
+
+def construct_graph(file_path, original_paper_id):
+    with open(file_path, 'r') as f:
+        papers_data = json.load(f)
+    # Initialize empty dictionaries to store extracted titles, years, and levels
+    titles = {}
+    years = {}
+    levels = {}
+
+    # Iterate through each paper in the dataset
+    for paper_id, paper_data in papers_data.items():
+        # Extract title
+        titles[paper_id] = paper_data.get('title', 'Unknown Title')
+
+        # Extract year
+        if 'citingPaper' in paper_data:
+            years[paper_id] = paper_data['citingPaper'].get('year', 'N/A')
+        else:
+            # For the root paper (PyTorch paper), set the year to 2019 as discussed
+            years[paper_id] = 2019
+    # Level 0: The PyTorch paper
+    levels[original_paper_id] = 0
+    
+    # Level 1: Direct citations of the PyTorch paper
+    for citation in papers_data[original_paper_id]['citations']:
+        levels[citation['citingPaper']['paperId']] = 1
+
+    # Extract Level 2 papers without modifying the dictionary during iteration
+    level_2_papers = []
+
+    for paper_id in list(levels.keys()):
+        if levels[paper_id] == 1:
+            for citation in papers_data[paper_id].get('citations', []):
+                if citation['citingPaper']['paperId'] not in levels:
+                    level_2_papers.append(citation['citingPaper']['paperId'])
+
+    # Add Level 2 papers to the levels dictionary
+    for paper_id in level_2_papers:
+        levels[paper_id] = 2
+
+    # Constructing the graph G using NetworkX
+    G = nx.DiGraph()
+
+    # Adding nodes to the graph with attributes title, year, and level
+    for paper_id in papers_data.keys():
+        G.add_node(paper_id, title=titles[paper_id], year=years[paper_id], level=levels[paper_id])
+
+    # Adding edges to the graph based on citations
+    for paper_id, paper_data in papers_data.items():
+        for citation in paper_data.get('citations', []):
+            citing_paper_id = citation['citingPaper']['paperId']
+            if citing_paper_id and paper_id:  # Check for None values
+                # Add edge from the citing paper to the current paper
+                G.add_edge(citing_paper_id, paper_id)
+
+    # Verifying the graph construction by inspecting the attributes of the first few nodes
+    node_attributes = [(node, G.nodes[node]['title'], G.nodes[node]['year'], G.nodes[node]['level']) for node in list(G.nodes)[:5]]
+    return node_attributes
