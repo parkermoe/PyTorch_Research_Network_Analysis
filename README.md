@@ -65,8 +65,10 @@ Visualizing the co-authorship network's expansion over the years provides a dyna
 
 These insights not only spotlight the growth of the PyTorch community but also underline the collaborative ethos that characterizes research in the deep learning domain.
 
+!
 
-By analyzing these network properties and visualizations, we gain a deeper understanding of the collaborative dynamics of the PyTorch research community on arXiv. It's clear that while the community is vast, it remains interconnected through key figures and tight-knit collaboration clusters.
+
+By analyzing these network properties and visualizations, we can gain a deeper understanding of the collaborative dynamics of the PyTorch research community on arXiv. It's clear that while the community is vast, it remains interconnected through key figures and tight-knit collaboration clusters.
 
 ## Future Work
 
