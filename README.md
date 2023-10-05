@@ -87,7 +87,7 @@ The visualization displays a three-level citation network:
 
 This enables us to see not just the direct impact of the original PyTorch paper, but also its secondary influence on subsequent research.
 
-!<iframe src="https://drive.google.com/file/d/1BbxmRcfFkeuvzp87M5Hi4_eEv7jfP45j/view?usp=share_link" width="640" height="480"></iframe>
+![My Animation](https://github.com/parkermoe/PyTorch_Research_Network_Analysis/blob/main/pytorch_citation_fast_red.gif)
 
 ### Applications and Insights
 
