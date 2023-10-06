@@ -6,9 +6,9 @@ PyTorch has become a key player in the fast-paced world of AI and deep learning.
 
 ## Objectives
 
-1. **Data Extraction**: Gathering papers related to PyTorch from arXiv and Semantic Scholar.
-2. **Co-Authorship Analysis**: Identifying key contributors and collaboration trends in the PyTorch community.
-3. **Citation Network Analysis**: Tracing the influence and spread of PyTorch through a multi-level citation network.network.
+1. **Data Extraction**: Gather papers related to PyTorch from arXiv and Semantic Scholar.
+2. **Co-Authorship Analysis**: Identify key contributors and collaboration trends in the PyTorch community.
+3. **Citation Network Analysis**: Trace the influence and spread of PyTorch through a multi-level citation network.
 
 
 ## Methodology
