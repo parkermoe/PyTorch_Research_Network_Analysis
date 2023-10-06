@@ -1,20 +1,15 @@
-# PyTorch Research Network Dynamics: A Citation and Co-authorship Analysis
+# PyTorch Research Network Dynamics: A Dual Approach to Citation and Co-authorship Analysis
 
 ## Project Overview
 
-In the rapidly evolving field of deep learning and artificial intelligence, libraries such as PyTorch have become foundational elements of the research landscape. This project takes a multi-dimensional approach to analyze the growth and influence of PyTorch in the scientific community. Initially centered on co-authorship networks, the project has now expanded to include multi-level citation analysis, offering a holistic view of how PyTorch has influenced and propagated throughout the research world.
-
----
+PyTorch has become a key player in the fast-paced world of AI and deep learning. This project takes a two-pronged approach to explore PyTorch's impact on the scientific community. It dives into both co-authorship networks to pinpoint key contributors and a multi-level citation analysis to see how PyTorch's ideas have spread across the research landscape.
 
 ## Objectives
 
-1. **Data Extraction**: Collect papers pertaining to "PyTorch" from arXiv.
-2. **Network Analysis**: Analyze the co-authorship network to identify key figures and trends in the community.
-3. **Co-Authorship Network Analysis**: Explore the community around PyTorch research by analyzing the co-authorship network.
-4. **Deep Dive**: Explore how the original PyTorch paper has influenced the research community by examining citations and their impact.
-5.  **Citation Network Analysis**: Investigate the influence and propagation of PyTorch papers by constructing and analyzing a multi-level citation network.
+1. **Data Extraction**: Gathering papers related to PyTorch from arXiv and Semantic Scholar.
+2. **Co-Authorship Analysis**: Identifying key contributors and collaboration trends in the PyTorch community.
+3. **Citation Network Analysis**: Tracing the influence and spread of PyTorch through a multi-level citation network.network.
 
----
 
 ## Methodology
 
@@ -45,7 +40,7 @@ The co-authorship network displays several interesting properties commonly seen 
 
 ![image](https://github.com/parkermoe/PyTorch_Research_Network_Analysis/assets/75709283/f1a9e2b5-acac-4512-96b0-5030526e8bfc)
 
-1. **Average Shortest Path Length**: The average number of collaborations it takes to connect any two authors in the network is approximately \(7.18\), suggesting a relatively close-knit community.
+1. **Average Shortest Path Length**: On average, it takes about 7.18 collaborations to connect any two authors, indicating a tight-knit community.
   
 2. **Power Law Degree Distribution**: The network's degree distribution follows a power-law pattern, typical of many real-world networks. While most authors collaborate with only a few others, a small subset acts as collaboration hubs. This distribution can be observed in the Degree Distribution figure below.
 
@@ -62,13 +57,13 @@ The co-authorship network displays several interesting properties commonly seen 
 
 ## Yearly Analysis of the Co-authorship Network
 
-Visualizing the co-authorship network's expansion over the years provides a dynamic perspective on the PyTorch research community's growth on arXiv. From our interactive visualization (refer to the Co-authorship Network over the Years figure below), we observed:
+Visualizing the co-authorship network's expansion over the years provides a dynamic perspective on the PyTorch research community's growth on arXiv. From the interactive visualization, we observed:
 
 1. **Rapid Expansion**: The network has seen a consistent growth year-on-year, reflecting the escalating interest and research activities around PyTorch.
 2. **Emergence of Key Players**: Over time, certain authors have established themselves as central figures in the network, evident from their high number of collaborations. These authors often act as pillars, driving research and fostering collaborations.
 3. **Collaborative Nature**: The PyTorch community showcases a strong collaborative spirit, with researchers frequently partnering to contribute to the field. This trend is underscored by the formation of tightly-knit clusters within the network.
 
-These insights not only spotlight the growth of the PyTorch community but also underline the collaborative ethos that characterizes research in the deep learning domain.
+Ultimately, these insights not only spotlight the growth of the PyTorch community but also underline the collaborative ethos that characterizes research in the deep learning domain.
 
 ![My Animation](https://github.com/parkermoe/PyTorch_Research_Network_Analysis/blob/main/pytorch_year_output2.gif)
 
