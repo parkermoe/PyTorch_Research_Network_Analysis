@@ -1,3 +1,5 @@
+# PyTorch Research Network Dynamics: A Citation and Co-authorship Analysis
+
 ## Project Overview
 
 In the rapidly evolving field of deep learning and artificial intelligence, libraries such as PyTorch have become foundational elements of the research landscape. This project takes a multi-dimensional approach to analyze the growth and influence of PyTorch in the scientific community. Initially centered on co-authorship networks, the project has now expanded to include multi-level citation analysis, offering a holistic view of how PyTorch has influenced and propagated throughout the research world.
